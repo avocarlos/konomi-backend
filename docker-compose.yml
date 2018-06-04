@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  flashback-be-srvc:
+    container_name: flashback-be
+    image: flashback-be-srvc
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
