@@ -1,13 +1,12 @@
 FROM ruby:2.5
-LABEL Name=flashback-be-srvc Version=0.0.1
-# throw errors if Gemfile has been modified since Gemfile.lock
-RUN bundle config --global frozen 1
-
-WORKDIR /usr/src/app
-
-COPY Gemfile Gemfile.lock ./
+LABEL Name=konomi_be_srvc Version=0.0.3
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+RUN mkdir /app
+WORKDIR /app
+COPY Gem* /app/
 RUN bundle install
+COPY . /app/
 
-COPY . .
+EXPOSE 8001
 
-CMD ["./your-daemon-or-script.rb"]
+ENTRYPOINT sleep infinity

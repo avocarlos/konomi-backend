@@ -1,11 +1,19 @@
 version: '3'
 
 services:
-  flashback-be-srvc:
-    container_name: flashback-be
-    image: flashback-be-srvc
-    build:
-      context: .
-      dockerfile: Dockerfile
+  backend:
+    image: stand87/konomi_be_srvc
+    build: .
+    volumes:
+      - .:/app
     ports:
-      - 3000:3000
+      - 8001:8001
+    links:
+      - db
+  db:
+    image: postgres:10.4
+    volumes:
+      - "db:/var/lib/postgresql/data"
+volumes:
+  backend:
+  db:

@@ -1,11 +1,13 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem 'mongoid', '~> 6.1.0'
-gem "sinatra"
+gem 'pg'
+gem 'activerecord'
+gem 'sinatra-activerecord'
+gem 'sinatra'
 gem 'rake'
 
 group :development, :test do
-  gem "rspec"
-  gem "rubocop"
+  gem 'rspec'
+  gem 'rubocop'
   gem 'rubocop-airbnb'
 end
