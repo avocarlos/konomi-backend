@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'pg'
 gem 'activerecord'
+gem 'pg'
+gem 'rake'
 gem 'sinatra-activerecord'
 gem 'sinatra'
-gem 'rake'
 
 group :development, :test do
   gem 'rspec'
-  gem 'rubocop'
+  gem 'rubocop', '~> 0.52.1', require: false
   gem 'rubocop-airbnb'
 end
