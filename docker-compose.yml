@@ -2,7 +2,7 @@ version: '3'
 
 services:
   backend:
-    image: stand87/konomi_be_srvc
+    image: stand87/konomi-be-srvc
     build: .
     volumes:
       - .:/app
