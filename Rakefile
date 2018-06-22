@@ -1,3 +1,7 @@
+require 'sinatra/activerecord'
+require 'sinatra/activerecord/rake'
+require './app'
+
 namespace :docker do
   desc 'Start containers and services'
   task :start do
@@ -6,7 +10,7 @@ namespace :docker do
 
   desc 'Remove containers'
   task :rm do
-    sh  'docker-compose rm -f'
+    sh 'docker-compose rm -f'
   end
 
   desc 'Stop containers'

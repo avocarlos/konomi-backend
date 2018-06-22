@@ -10,10 +10,20 @@ services:
       - 8001:8001
     links:
       - db
+    environment:
+      DB_NAME: 'konomi'
+      DB_USER: 'postgres'
+      DB_PASSWORD: 'konomip'
+      DB_HOST: 'db'
   db:
     image: postgres:10.4
     volumes:
-      - "db:/var/lib/postgresql/data"
+      - db:/var/lib/postgresql/data
+    ports:
+      - 8002:8002
+    environment:
+      POSTGRES_PASSWORD: 'konomip'
+      POSTGRES_DB: 'konomi'
 volumes:
   backend:
   db:
