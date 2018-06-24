@@ -33,4 +33,10 @@ namespace :docker do
     @id = `docker ps -f "name=backend" --format "{{.ID}}"`
     sh "docker exec -it #{@id.strip} bash"
   end
+
+  desc 'Run bash into the db'
+  task :db do
+    @id = `docker ps -f "name=db" --format "{{.ID}}"`
+    sh "docker exec -it #{@id.strip} bash"
+  end
 end

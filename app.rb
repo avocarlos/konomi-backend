@@ -4,7 +4,7 @@ require 'sinatra'
 
 Bundler.require
 
-set :port, 3000
+set :port, 8001
 set :bind, '0.0.0.0'
 
 get '/' do
