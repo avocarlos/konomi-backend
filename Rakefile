@@ -1,6 +1,5 @@
 require 'sinatra/activerecord'
 require 'sinatra/activerecord/rake'
-require './app'
 
 namespace :docker do
   desc 'Start containers and services'

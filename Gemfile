@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'activerecord'
+gem 'thin'
 gem 'pg'
 gem 'rake'
 gem 'sinatra-activerecord'
