@@ -1,6 +1,11 @@
 require 'sinatra/activerecord'
 require 'sinatra/activerecord/rake'
 
+desc 'Start server'
+task :start do
+  sh 'rackup -o 0.0.0.0 -p 8001'
+end
+
 namespace :docker do
   desc 'Start containers and services'
   task :start do
